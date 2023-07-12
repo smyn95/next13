@@ -1,3 +1,4 @@
+import MeowArticle from '@/components/MeowArticle';
 import { getProducts } from '../../service/products';
 import Link from 'next/link';
 
@@ -5,17 +6,6 @@ import Link from 'next/link';
 
 export default async function ProductsPage() {
     const products = await getProducts();
-    const res = await fetch('https://meowfacts.herokuapp.com/', {
-        next: { revalidate: 3 }
-    });
-    const data = await res.json();
-    const factText = data.data[0];
-
-    // const response = await fetch('https://meowfacts.herokuapp.com', {
-    //     next: { revalidate: 3 }
-    // })
-    //     .then((res) => res.json())
-    //     .then(({ data }) => data[0]);
 
     return (
         <>
@@ -27,7 +17,7 @@ export default async function ProductsPage() {
                     </li>
                 ))}
             </ul>
-            <article>{factText}</article>
+            <MeowArticle />
         </>
     );
 }
