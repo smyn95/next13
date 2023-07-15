@@ -17,6 +17,14 @@ const nextConfig = {
                 // 308 status code
             }
         ];
+    },
+    async rewrites() {
+        return [
+            {
+                source: '/smy', // 해당 경로로 수정
+                destination: '/about/me/smy' // 찐 경로
+            }
+        ];
     }
 };
 
