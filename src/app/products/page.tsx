@@ -15,7 +15,7 @@ export default async function ProductsPage() {
             <h1>제품 소개 페이지</h1>
             <Image src={clothesImage} alt="clothes" />
             <ul>
-                {products.map(({ id, name }, index) => (
+                {products.map(({ id, name, img }, index) => (
                     <li key={index}>
                         <Link href={`/products/${id}`}>{name}</Link>
                     </li>
