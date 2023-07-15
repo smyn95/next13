@@ -8,7 +8,7 @@ export default function GoProductsButton() {
         <>
             <button
                 onClick={() => {
-                    router.push('/products');
+                    router.back();
                 }}
             >
                 제품 페이지로 이동
